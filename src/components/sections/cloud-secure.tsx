@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import advanced from "../../assets/images/advanced.png";
 import public_img from "../../assets/images/public-sector.png";
 import mdec from "../../assets/images/mdec.png";
@@ -32,11 +33,15 @@ const images = [
 ];
 
 const CloudSecure = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <motion.section
+      ref={ref}
       className="py-16 bg-white"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +49,7 @@ const CloudSecure = () => {
           <motion.div
             className="md:w-1/2"
             initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            animate={isInView ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
             transition={{ duration: 1 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold text-mission-navy mb-6">
@@ -70,7 +75,7 @@ const CloudSecure = () => {
                 key={index}
                 className="flex flex-col items-center"
                 initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
                 transition={{ duration: 1, delay: index * 0.2 }}
               >
                 <Image
