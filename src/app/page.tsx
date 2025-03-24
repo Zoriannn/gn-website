@@ -14,10 +14,10 @@ export default function Home() {
       <main>
         <Hero />
         <CloudSecure />
-        <AIApplications />
+        {/* <AIApplications />
         <ServicesGrid />
         <WhyMission />
-        <Testimonials />
+        <Testimonials /> */}
       </main>
       <Footer />
     </>

@@ -1,5 +1,8 @@
+'use client'
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import advanced from "../../assets/images/advanced.png";
 import public_img from "../../assets/images/public-sector.png";
 import mdec from "../../assets/images/mdec.png";
@@ -30,14 +33,25 @@ const images = [
 
 const CloudSecure = () => {
   return (
-    <section className="py-16 bg-white">
+    <motion.section
+      className="py-16 bg-white"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-12 items-center">
-          <div className="md:w-1/2">
+          <motion.div
+            className="md:w-1/2"
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
             <h2 className="text-2xl md:text-3xl font-bold text-mission-navy mb-6">
               Secure your cloud with{" "}
+              <br></br>
               <span className="bg-mission-orange text-white px-2 py-1 rounded">
-                Mission Cloud Secure
+                Galactic Network
               </span>
             </h2>
             <p className="text-gray-600 mb-6">
@@ -49,10 +63,16 @@ const CloudSecure = () => {
             >
               Protect your cloud with Cloud Secure
             </Link>
-          </div>
+          </motion.div>
           <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {images.map((image, index) => (
-              <div key={index} className="flex flex-col items-center">
+              <motion.div
+                key={index}
+                className="flex flex-col items-center"
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: index * 0.2 }}
+              >
                 <Image
                   src={image.src}
                   alt={image.alt}
@@ -61,12 +81,12 @@ const CloudSecure = () => {
                   className="object-contain"
                 />
                 <p className="mt-2 text-sm text-gray-700">{image.caption}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

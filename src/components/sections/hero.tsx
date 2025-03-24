@@ -8,7 +8,7 @@ import cloudImage1 from "@/assets/images/7.png";
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-b from-blue-50 to-gray-100 pt-10 pb-16 relative overflow-hidden">
+    <section className="bg-gradient-to-b from-blue-50 to-gray-100 pt-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="text-left">
@@ -22,12 +22,12 @@ const Hero = () => {
                 AWS PREMIER SERVICE & SOFTWARE PARTNER
               </p>
 
-            <h1 className="text-3xl sm:text-4xl md:text-4.5xl font-bold text-mission-navy leading-tight mb-4">
-              WE ARE YOUR TRUSTED BUSINESS {" "}
-              <span className="bg-mission-blue bg-opacity-20 px-2 py-1 rounded">
-              TECHNOLOGY TRANSFORMATION PARTNER.
-              </span>
-            </h1>
+              <h1 className="text-3xl sm:text-4xl md:text-4.5xl font-bold text-mission-navy leading-tight mb-4">
+                WE ARE YOUR TRUSTED BUSINESS {" "}
+                <span className="bg-mission-blue bg-opacity-20 px-2 py-1 rounded">
+                  TECHNOLOGY TRANSFORMATION PARTNER.
+                </span>
+              </h1>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -42,19 +42,21 @@ const Hero = () => {
               </Link>
             </motion.div>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+          <div className="md:col-span-1 md:ml-14">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
             >
-            <Image
-              src={cloudImage}
-              alt="Cloud Management Illustration"
-              width={500}
-              height={400}
-              className="object-contain"
-            />
-          </motion.div>
+              <Image
+                src={cloudImage}
+                alt="Cloud Management Illustration"
+                width={500}
+                height={400}
+                className="object-contain"
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
 
