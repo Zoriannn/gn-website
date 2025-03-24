@@ -1,5 +1,32 @@
 import Link from "next/link";
 import Image from "next/image";
+import advanced from "../../assets/images/advanced.png";
+import public_img from "../../assets/images/public-sector.png";
+import mdec from "../../assets/images/mdec.png";
+import well from "../../assets/images/well-architect.png";
+
+const images = [
+  {
+    src: advanced.src,
+    alt: "SI Security Partner of the Year",
+    caption: "AWS Advanced Tier Services"
+  },
+  {
+    src: public_img.src,
+    alt: "Another Security Award",
+    caption: "AWS Public Sector"
+  },
+  {
+    src: well.src,
+    alt: "Final Security Award",
+    caption: "AWS Well-Architected Partner Program"
+  },
+  {
+    src: mdec.src,
+    alt: "Yet Another Security Award",
+    caption: "Malaysia Digital Status"
+  }
+];
 
 const CloudSecure = () => {
   return (
@@ -23,16 +50,19 @@ const CloudSecure = () => {
               Protect your cloud with Cloud Secure
             </Link>
           </div>
-          <div className="md:w-1/2 flex justify-center">
-            <div className="relative">
-              <Image
-                src="https://ext.same-assets.com/3756533236/3424024819.png"
-                alt="SI Security Partner of the Year"
-                width={350}
-                height={350}
-                className="object-contain"
-              />
-            </div>
+          <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {images.map((image, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={150}
+                  height={150}
+                  className="object-contain"
+                />
+                <p className="mt-2 text-sm text-gray-700">{image.caption}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
