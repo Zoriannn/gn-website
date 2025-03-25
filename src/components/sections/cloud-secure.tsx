@@ -60,7 +60,7 @@ const CloudSecure = () => {
               </span>
             </h2>
             <p className="text-gray-600 mb-6">
-              Protect your cloud environment with next-generation threat detection, automated incident response, and continuous compliance and operational excellence with Mission Cloud Secure, our new SaaS application that delivers 24/7 monitoring and response through a seamless combination of CrowdStrike&apos;s world-class security platform with Mission&apos;s AWS expertise.
+              (Need a description here)Protect your cloud environment with next-generation threat detection, automated incident response, and continuous compliance and operational excellence with Mission Cloud Secure, our new SaaS application that delivers 24/7 monitoring and response through a seamless combination of CrowdStrike&apos;s world-class security platform with Mission&apos;s AWS expertise.
             </p>
             <Link
               href="#"
