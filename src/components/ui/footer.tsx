@@ -6,11 +6,11 @@ const Footer = () => {
     {
       title: "Company",
       links: [
-        { name: "About", href: "#" },
-        { name: "Our Culture", href: "#" },
+        { name: "About Us", href: "#" },
+        { name: "Contact Us", href: "#" },
         { name: "Careers", href: "#" },
-        { name: "Contact", href: "#" },
-        { name: "Discover", href: "#" },
+        { name: "Events", href: "#" },
+        { name: "FAQs", href: "#" },
       ]
     },
     {
