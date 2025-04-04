@@ -4,32 +4,47 @@ import Image from "next/image";
 const ServicesGrid = () => {
   const services = [
     {
-      title: "Cloud Management",
+      title: "Cloud Landing Zone",
       icon: "https://ext.same-assets.com/956353413/1347258198.svg+xml",
       href: "#"
     },
     {
-      title: "Generative AI",
+      title: "Cloud Migration",
       icon: "https://ext.same-assets.com/3780915123/1523709230.svg+xml",
       href: "#"
     },
     {
-      title: "Migration",
+      title: "Cloud Security Assessment",
       icon: "https://ext.same-assets.com/3396239064/2286122983.svg+xml",
       href: "#"
     },
     {
-      title: "Cloud Security",
+      title: "Cloud Platform Security & Compliance Uplift",
       icon: "https://ext.same-assets.com/825999966/3973646205.svg+xml",
       href: "#"
     },
     {
-      title: "Data, Analytics & ML",
+      title: "Well-Architected Framework",
       icon: "https://ext.same-assets.com/2600985523/1747417680.svg+xml",
       href: "#"
     },
     {
-      title: "Modernization",
+      title: "Cloud Platform Accelerator",
+      icon: "https://ext.same-assets.com/2572778066/3403518403.svg+xml",
+      href: "#"
+    },
+    {
+      title: "Containerization",
+      icon: "https://ext.same-assets.com/825999966/3973646205.svg+xml",
+      href: "#"
+    },
+    {
+      title: "Billing Management & Optimization Service (BMOS)",
+      icon: "https://ext.same-assets.com/2600985523/1747417680.svg+xml",
+      href: "#"
+    },
+    {
+      title: "Cloud Management & Optimization Service (CMOS)",
       icon: "https://ext.same-assets.com/2572778066/3403518403.svg+xml",
       href: "#"
     }
