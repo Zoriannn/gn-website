@@ -23,11 +23,12 @@ const Hero = () => {
               </p>
 
               <h1 className="text-3xl sm:text-4xl md:text-4.5xl font-bold text-mission-navy leading-tight mb-4">
-                WE ARE YOUR TRUSTED BUSINESS {" "}
+                EMPOWERING BUSINESS TRANSFORMATION THROUGH {" "}
                 <span className="bg-mission-blue bg-opacity-20 px-2 py-1 rounded">
-                  TECHNOLOGY TRANSFORMATION PARTNER.
+                  CLOUD NATIVE TECHNOLOGY.
                 </span>
               </h1>
+              <p>Galactic Network helps businesses modernize, optimize, and innovate — driving sustainable growth with future-ready solutions.</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -38,7 +39,7 @@ const Hero = () => {
                 href="#"
                 className="mt-5 inline-flex items-center rounded-full bg-mission-navy px-6 py-3 text-sm font-medium text-white shadow-sm hover:bg-gray-800 transition-colors"
               >
-                View our Services
+                Talk to an Expert
               </Link>
             </motion.div>
           </div>

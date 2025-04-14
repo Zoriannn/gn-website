@@ -1,53 +1,55 @@
 import Link from "next/link";
 import Image from "next/image";
+import { CloudIcon, ShieldCheckIcon, CurrencyDollarIcon, CubeIcon, ServerIcon, BackupIcon } from "@heroicons/react/outline";
+
 
 const ServicesGrid = () => {
   const services = [
     {
       title: "Cloud Landing Zone",
-      icon: "https://ext.same-assets.com/956353413/1347258198.svg+xml",
+      icon: CloudIcon,
       href: "#"
     },
     {
       title: "Cloud Migration",
-      icon: "https://ext.same-assets.com/3780915123/1523709230.svg+xml",
+      icon: ShieldCheckIcon,
       href: "#"
     },
     {
-      title: "Cloud Security Assessment",
+      title: "Cloud Security & Compliance",
       icon: "https://ext.same-assets.com/3396239064/2286122983.svg+xml",
       href: "#"
     },
     {
-      title: "Cloud Platform Security & Compliance Uplift",
+      title: "Cost & Architecture Optimization",
       icon: "https://ext.same-assets.com/825999966/3973646205.svg+xml",
       href: "#"
     },
     {
-      title: "Well-Architected Framework",
+      title: "Cloud Platform Accelerator & Containerization",
       icon: "https://ext.same-assets.com/2600985523/1747417680.svg+xml",
       href: "#"
     },
     {
-      title: "Cloud Platform Accelerator",
+      title: "Managed Cloud Operations",
       icon: "https://ext.same-assets.com/2572778066/3403518403.svg+xml",
       href: "#"
     },
     {
-      title: "Containerization",
+      title: "Cloud Backup Solutions",
       icon: "https://ext.same-assets.com/825999966/3973646205.svg+xml",
       href: "#"
     },
-    {
-      title: "Billing Management & Optimization Service (BMOS)",
-      icon: "https://ext.same-assets.com/2600985523/1747417680.svg+xml",
-      href: "#"
-    },
-    {
-      title: "Cloud Management & Optimization Service (CMOS)",
-      icon: "https://ext.same-assets.com/2572778066/3403518403.svg+xml",
-      href: "#"
-    }
+    // {
+    //   title: "Billing Management & Optimization Service (BMOS)",
+    //   icon: "https://ext.same-assets.com/2600985523/1747417680.svg+xml",
+    //   href: "#"
+    // },
+    // {
+    //   title: "Cloud Management & Optimization Service (CMOS)",
+    //   icon: "https://ext.same-assets.com/2572778066/3403518403.svg+xml",
+    //   href: "#"
+    // }
   ];
 
   return (

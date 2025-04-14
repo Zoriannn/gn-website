@@ -53,14 +53,16 @@ const CloudSecure = () => {
             transition={{ duration: 1 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold text-mission-navy mb-6">
-              Secure your cloud with{" "}
+              Who We Are
               <br></br>
-              <span className="bg-mission-orange text-white px-2 py-1 rounded">
-                Galactic Network
-              </span>
+              {/* <span className="bg-mission-orange text-white px-2 py-1 rounded">
+                Who We Are
+              </span> */}
             </h2>
             <p className="text-gray-600 mb-6">
-              (Need a description here)Protect your cloud environment with next-generation threat detection, automated incident response, and continuous compliance and operational excellence with Mission Cloud Secure, our new SaaS application that delivers 24/7 monitoring and response through a seamless combination of CrowdStrike&apos;s world-class security platform with Mission&apos;s AWS expertise.
+            Galactic Network is a business technology transformation partner dedicated to helping organizations evolve into technology-native enterprises. We leverage innovative technology, automation, Generative AI and deep expertise to solve real business challenges, enabling agility, resilience, and continuous growth.
+            <br/><br/>Our cloud experts, with over 40 years of combined experience, work side by side with businesses to build reliable, secure, and high-performing technology environments.
+            <br/><br/>With a growing presence across Asia and an expanding portfolio of solutions, we continue to empower organizations to thrive in an ever-evolving digital landscape
             </p>
             <Link
               href="#"
