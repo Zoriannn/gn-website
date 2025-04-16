@@ -1,18 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CloudIcon, ShieldCheckIcon, CurrencyDollarIcon, CubeIcon, ServerIcon, BackupIcon } from "@heroicons/react/outline";
+//import { CloudIcon, ShieldCheckIcon, CurrencyDollarIcon, CubeIcon, ServerIcon, BackupIcon } from "@heroicons/react/outline";
 
 
 const ServicesGrid = () => {
   const services = [
     {
       title: "Cloud Landing Zone",
-      icon: CloudIcon,
+      icon: "https://ext.same-assets.com/3396239064/2286122983.svg+xml",
       href: "#"
     },
     {
       title: "Cloud Migration",
-      icon: ShieldCheckIcon,
+      icon: "https://ext.same-assets.com/3396239064/2286122983.svg+xml",
       href: "#"
     },
     {
