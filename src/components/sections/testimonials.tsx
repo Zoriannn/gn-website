@@ -22,25 +22,47 @@ const Testimonials = () => {
                 />
               </div>
               <div className="p-6">
+                <h2 className="font-medium text-mission-navy">Website Hosting: The Cost-Saving Way</h2><br></br>
                 <blockquote className="text-gray-600 italic mb-4">
-                  "Mission has been an incredible partner, bringing impressive and extensive AWS cloud management expertise."
-                </blockquote>
-                <div className="font-medium text-mission-navy">Jay Wessland</div>
-                <div className="text-sm text-gray-500 mb-4">VICE PRESIDENT AND CTO</div>
-                <div className="text-sm text-gray-500">Boston Celtics</div>
+                  "Moving to Amazon S3 cut hosting costs by 83%, freed up engineering resources, and improved reliability and performance."                </blockquote>
+                <div className="font-medium text-mission-navy">LS Chong</div>
+                <div className="text-sm text-gray-500 mb-4">CEO</div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white rounded-xl overflow-hidden shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="bg-green-600 relative min-h-[200px] md:min-h-full">
+                <Image
+                  src="https://ext.same-assets.com/858521533/3755446992.png"
+                  alt="Boston Celtics"
+                  fill
+                  className="object-cover p-4"
+                />
+              </div>
+              <div className="p-6">
+                <h2 className="font-medium text-mission-navy">Website Hosting: The Cost-Saving Way</h2><br></br>
+                <blockquote className="text-gray-600 italic mb-4">
+                  "Moving to Amazon S3 cut hosting costs by 83%, freed up engineering resources, and improved reliability and performance."                </blockquote>
+                <div className="font-medium text-mission-navy">LS Chong</div>
+                <div className="text-sm text-gray-500 mb-4">CEO</div>
               </div>
             </div>
           </div>
         </div>
 
+        <div className="text-right mt-4">
+          <Link
+            href="#"
+            className="text-mission-orange underline font-medium text-sm"
+          >
+            See All Success Stories
+          </Link>
+        </div>
         <div className="mt-12">
-          <h3 className="text-xl font-semibold text-mission-navy mb-6">
-            Stay Ahead of the Curve
-          </h3>
-
-          <div className="inline-block px-4 py-2 rounded-full bg-black text-white mb-8">
-            AI Resources
-          </div>
+        <h2 className="text-2xl font-bold text-mission-navy mb-12">
+          Stay Ahead of the Curve
+        </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Blog Card 1 */}
