@@ -33,87 +33,80 @@ const Navbar = () => {
       hasDropdown: true,
       items: [
         {
-          name: "Foundation & Migration",
-          description: "Cloud services platform providing visibility, guidance & support for your cloud",
-          href: "/services"
+          name: "Cloud Foundation & Deployment",
+          subItems: [
+            {
+              name: "Cloud Landing Zone",
+              description: "Start Transforming Your Business with Cloud-Native Securely.",
+              href: "/services/cloud-landing-zone", // Matches the route
+            },
+            {
+              name: "Cloud Migration",
+              description: "Transform Into Cloud-Native Without Disruption",
+              href: "/services/cloud-migration", // Matches the route
+            },
+          ],
         },
         {
-          name: "Security & Compliance",
-          description: "AWS guidance for efficient cloud growth and foundational best practices",
-          href: "#"
+          name: "Security & Resilience",
+          subItems: [
+            {
+              name: "Cloud Security & Compliance",
+              description: "Stay Safe and Compliant",
+              href: "/services/cloud-security", // Matches the route
+            },
+            {
+              name: "Cloud Backup Solutions",
+              description: "Recover Quickly and Protect What Matters",
+              href: "/services/cloud-backup", // Matches the route
+            },
+          ],
         },
         {
-          name: "Professional Services",
-          description: "Optimize and scale your AI solutions on AWS",
-          href: "#"
+          name: "Modernization",
+          subItems: [
+            {
+              name: "Cloud Platform Accelerator & Containerization",
+              href: "/services/cloud-platform-accelerator", // Matches the route
+            },
+          ],
         },
         {
-          name: "Innovation & Modernization",
-          description: "Fully managed security, detection, and response",
-          href: "#"
+          name: "Performance & Cost Optimization",
+          subItems: [
+            {
+              name: "Optimize for Efficiency – Well-Architected Review",
+              href: "/services/well-architected-review", // Matches the route
+            },
+          ],
         },
         {
-          name: "Manged Services",
-          description: "Track and manage the work accomplished by your Mission Cloud DevOps team",
-          href: "#"
-        }
-      ]
+          name: "Managed Cloud Operations",
+          subItems: [
+            {
+              name: "Billing Management & Optimization Service (BMOS)",
+              description: "Manage Cloud Spend with Confidence",
+              href: "/services/billing-management", // Matches the route
+            },
+            {
+              name: "Cloud Management & Optimization Service (CMOS)",
+              description: "Keep Operations Running Smoothly",
+              href: "/services/cloud-management", // Matches the route
+            },
+          ],
+        },
+      ],
     },
     {
       title: "Company",
       hasDropdown: true,
       items: [
         {
-          name: "Cloud Managed Services",
-          subItems: [
-            {
-              name: "Cloud Foundation",
-              description: "Manage costs, support your teams, and build to scale.",
-              href: "#"
-            },
-            {
-              name: "Cloud One",
-              description: "Our comprehensive service for AWS optimization, operations, and security",
-              href: "#"
-            }
-          ]
+          name: "Careers",
+          description: "Be part of Galactic Network!",
+          href: "/company/careers", // Matches the route
         },
-        {
-          name: "AI Management Services",
-          subItems: [
-            {
-              name: "AI Foundation",
-              description: "Cost management and foundational best practices for AI solutions on AWS",
-              href: "#"
-            }
-          ]
-        },
-        {
-          name: "Professional Services",
-          subItems: [
-            {
-              name: "AWS Migrations",
-              description: "Minimize downtime, forecast costs, and migrate efficiently",
-              href: "#"
-            },
-            {
-              name: "AWS Modernization",
-              description: "Containerization, serverless, and microservices",
-              href: "#"
-            },
-            {
-              name: "Data, Analytics & Machine Learning",
-              description: "Leverage data analytics and machine learning to elevate your business",
-              href: "#"
-            },
-            {
-              name: "Generative AI",
-              description: "Leverage AWS AI tools: Amazon Bedrock, SageMaker, and Foundation Models",
-              href: "#"
-            }
-          ]
-        }
-      ]
+      ],
     },
     {
       title: "Resources",
@@ -122,25 +115,27 @@ const Navbar = () => {
         {
           name: "Events",
           description: "Join us at our next event",
-          href: "#",
+          href: "/resources/events", // Matches the route
         },
         {
           name: "FAQs",
           description: "Get answers to your questions",
-          href: "#",
-        }
-      ]
+          href: "/resources/faqs", // Matches the route
+        },
+      ],
     },
     {
       title: "About Us",
       hasDropdown: false,
-      items: []
+      items: [],
+      href: "/about-us", // Matches the route
     },
     {
       title: "Contact Us",
       hasDropdown: false,
-      items: []
-    }
+      items: [],
+      href: "/contact-us", // Matches the route
+    },
   ];
 
   return (
@@ -164,49 +159,60 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <div key={item.title} className="relative">
-                <button
-                  onClick={() => toggleDropdown(item.title)}
-                  className="flex items-center px-2 py-1 text-sm font-medium text-gray-700 hover:text-mission-orange transition-colors"
-                >
-                  {item.title}
-                  {item.hasDropdown && (
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                  )}
-                </button>
-                {activeDropdown === item.title && item.hasDropdown && (
-                  <div className="absolute left-0 mt-2 w-80 bg-white shadow-lg rounded-md overflow-hidden z-50">
-                    <div className="p-5">
-                      {item.items && item.items.map((subItem, idx) => (
-                        <div key={idx} className="mb-4">
-                          {subItem.subItems ? (
-                            <>
-                              <h3 className="font-medium text-gray-800 mb-2">{subItem.name}</h3>
-                              <div className="ml-4">
-                                {subItem.subItems.map((sub, subIdx) => (
-                                  <Link
-                                    key={subIdx}
-                                    href={sub.href}
-                                    className="block py-1 text-sm text-gray-600 hover:text-mission-orange"
-                                  >
-                                    {sub.name}
-                                    <p className="text-xs text-gray-500">{sub.description}</p>
-                                  </Link>
-                                ))}
-                              </div>
-                            </>
-                          ) : (
-                            <Link
-                              href={subItem.href as string}
-                              className="block py-1 text-sm text-gray-600 hover:text-mission-orange"
-                            >
-                              <span className="font-medium">{subItem.name}</span>
-                              <p className="text-xs text-gray-500">{subItem.description}</p>
-                            </Link>
-                          )}
+                {item.hasDropdown ? (
+                  // Dropdown Logic
+                  <>
+                    <button
+                      onClick={() => toggleDropdown(item.title)}
+                      className="flex items-center px-2 py-1 text-sm font-medium text-gray-700 hover:text-mission-orange transition-colors"
+                    >
+                      {item.title}
+                      <ChevronDown className="ml-1 h-4 w-4" />
+                    </button>
+                    {activeDropdown === item.title && (
+                      <div className="absolute left-0 mt-2 w-80 bg-white shadow-lg rounded-md overflow-hidden z-50">
+                        <div className="p-5">
+                          {item.items.map((subItem, idx) => (
+                            <div key={idx} className="mb-4">
+                              {subItem.subItems ? (
+                                <>
+                                  <h3 className="font-medium text-gray-800 mb-2">{subItem.name}</h3>
+                                  <div className="ml-4">
+                                    {subItem.subItems.map((sub, subIdx) => (
+                                      <Link
+                                        key={subIdx}
+                                        href={sub.href}
+                                        className="block py-1 text-sm text-gray-600 hover:text-mission-orange"
+                                      >
+                                        {sub.name}
+                                        <p className="text-xs text-gray-500">{sub.description}</p>
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </>
+                              ) : (
+                                <Link
+                                  href={subItem.href}
+                                  className="block py-1 text-sm text-gray-600 hover:text-mission-orange"
+                                >
+                                  <span className="font-medium">{subItem.name}</span>
+                                  <p className="text-xs text-gray-500">{subItem.description}</p>
+                                </Link>
+                              )}
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                  </div>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  // Non-Dropdown Logic
+                  <Link
+                    href={item.href}
+                    className="px-2 py-1 text-sm font-medium text-gray-700 hover:text-mission-orange transition-colors"
+                  >
+                    {item.title}
+                  </Link>
                 )}
               </div>
             ))}
@@ -263,9 +269,8 @@ const Navbar = () => {
                   {item.title}
                   {item.hasDropdown && (
                     <ChevronDown
-                      className={`ml-1 h-4 w-4 transform transition-transform ${
-                        activeDropdown === item.title ? 'rotate-180' : ''
-                      }`}
+                      className={`ml-1 h-4 w-4 transform transition-transform ${activeDropdown === item.title ? 'rotate-180' : ''
+                        }`}
                     />
                   )}
                 </button>
