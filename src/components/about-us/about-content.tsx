@@ -35,7 +35,7 @@ Founded with a vision to simplify complex technology challenges, we specialize i
             >
               <Image
                 src="/images/Dualboot-1.jpg"
-                alt="Dualboot Partners Office"
+                alt="Galactic Network Office"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
