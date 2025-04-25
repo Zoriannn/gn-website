@@ -1,19 +1,15 @@
-"use client";
+'use client'
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../assets/images/GALACTIC_TRANS_BG (1).png";
-import {
-  Menu,
-  X,
-  ChevronDown,
-  Search
-} from "lucide-react";
+import { Menu, X, ChevronDown, Search } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -27,6 +23,23 @@ const Navbar = () => {
     }
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const navItems = [
     {
       title: "Services & Solutions",
@@ -38,12 +51,12 @@ const Navbar = () => {
             {
               name: "Cloud Landing Zone",
               description: "Start Transforming Your Business with Cloud-Native Securely.",
-              href: "/services/cloud-landing-zone", // Matches the route
+              href: "/services/cloud-landing-zone",
             },
             {
               name: "Cloud Migration",
               description: "Transform Into Cloud-Native Without Disruption",
-              href: "/services/cloud-migration", // Matches the route
+              href: "/services/cloud-migration",
             },
           ],
         },
@@ -53,12 +66,12 @@ const Navbar = () => {
             {
               name: "Cloud Security & Compliance",
               description: "Stay Safe and Compliant",
-              href: "/services/cloud-security", // Matches the route
+              href: "/services/cloud-security",
             },
             {
               name: "Cloud Backup Solutions",
               description: "Recover Quickly and Protect What Matters",
-              href: "/services/cloud-backup", // Matches the route
+              href: "/services/cloud-backup",
             },
           ],
         },
@@ -67,7 +80,7 @@ const Navbar = () => {
           subItems: [
             {
               name: "Cloud Platform Accelerator & Containerization",
-              href: "/services/cloud-platform-accelerator", // Matches the route
+              href: "/services/cloud-platform-accelerator",
             },
           ],
         },
@@ -76,7 +89,7 @@ const Navbar = () => {
           subItems: [
             {
               name: "Optimize for Efficiency – Well-Architected Review",
-              href: "/services/well-architected-review", // Matches the route
+              href: "/services/well-architected-review",
             },
           ],
         },
@@ -86,12 +99,12 @@ const Navbar = () => {
             {
               name: "Billing Management & Optimization Service (BMOS)",
               description: "Manage Cloud Spend with Confidence",
-              href: "/services/billing-management", // Matches the route
+              href: "/services/billing-management",
             },
             {
               name: "Cloud Management & Optimization Service (CMOS)",
               description: "Keep Operations Running Smoothly",
-              href: "/services/cloud-management", // Matches the route
+              href: "/services/cloud-management",
             },
           ],
         },
@@ -104,7 +117,7 @@ const Navbar = () => {
         {
           name: "Careers",
           description: "Be part of Galactic Network!",
-          href: "/company/careers", // Matches the route
+          href: "/company/careers",
         },
       ],
     },
@@ -115,12 +128,12 @@ const Navbar = () => {
         {
           name: "Events",
           description: "Join us at our next event",
-          href: "/resources/events", // Matches the route
+          href: "/resources/events",
         },
         {
           name: "FAQs",
           description: "Get answers to your questions",
-          href: "/resources/faqs", // Matches the route
+          href: "/resources/faqs",
         },
       ],
     },
@@ -128,13 +141,13 @@ const Navbar = () => {
       title: "About Us",
       hasDropdown: false,
       items: [],
-      href: "/about-us", // Matches the route
+      href: "/about-us",
     },
     {
       title: "Contact Us",
       hasDropdown: false,
       items: [],
-      href: "/contact-us", // Matches the route
+      href: "/contact-us",
     },
   ];
 
@@ -156,7 +169,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-6" ref={dropdownRef}>
             {navItems.map((item) => (
               <div key={item.title} className="relative">
                 {item.hasDropdown ? (
@@ -269,41 +282,45 @@ const Navbar = () => {
                   {item.title}
                   {item.hasDropdown && (
                     <ChevronDown
-                      className={`ml-1 h-4 w-4 transform transition-transform ${activeDropdown === item.title ? 'rotate-180' : ''
-                        }`}
+                      className={`ml-1 h-4 w-4 transform transition-transform ${
+                        activeDropdown === item.title ? "rotate-180" : ""
+                      }`}
                     />
                   )}
                 </button>
 
                 {activeDropdown === item.title && item.hasDropdown && (
                   <div className="pl-4 space-y-2">
-                    {item.items && item.items.map((subItem, idx) => (
-                      <div key={idx} className="py-2">
-                        {subItem.subItems ? (
-                          <>
-                            <h3 className="px-3 text-sm font-medium text-gray-800">{subItem.name}</h3>
-                            <div className="mt-1 pl-3">
-                              {subItem.subItems.map((sub, subIdx) => (
-                                <Link
-                                  key={subIdx}
-                                  href={sub.href}
-                                  className="block px-3 py-1 text-sm text-gray-600 hover:text-mission-orange"
-                                >
-                                  {sub.name}
-                                </Link>
-                              ))}
-                            </div>
-                          </>
-                        ) : (
-                          <Link
-                            href={subItem.href as string}
-                            className="block px-3 py-1 text-sm text-gray-600 hover:text-mission-orange"
-                          >
-                            {subItem.name}
-                          </Link>
-                        )}
-                      </div>
-                    ))}
+                    {item.items &&
+                      item.items.map((subItem, idx) => (
+                        <div key={idx} className="py-2">
+                          {subItem.subItems ? (
+                            <>
+                              <h3 className="px-3 text-sm font-medium text-gray-800">
+                                {subItem.name}
+                              </h3>
+                              <div className="mt-1 pl-3">
+                                {subItem.subItems.map((sub, subIdx) => (
+                                  <Link
+                                    key={subIdx}
+                                    href={sub.href}
+                                    className="block px-3 py-1 text-sm text-gray-600 hover:text-mission-orange"
+                                  >
+                                    {sub.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </>
+                          ) : (
+                            <Link
+                              href={subItem.href as string}
+                              className="block px-3 py-1 text-sm text-gray-600 hover:text-mission-orange"
+                            >
+                              {subItem.name}
+                            </Link>
+                          )}
+                        </div>
+                      ))}
                   </div>
                 )}
               </div>

@@ -7,7 +7,7 @@ import WhyMission from "@/components/sections/why-mission";
 import Testimonials from "@/components/sections/testimonials";
 import Footer from "@/components/ui/footer";
 
-export default function Home() {
+export default function ContactUsPage() {
   return (
     <>
       <Navbar />

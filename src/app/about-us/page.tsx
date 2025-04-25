@@ -1,16 +1,21 @@
 import Navbar from "@/components/ui/navbar";
-import Hero from "@/components/sections/hero";
-import CloudSecure from "@/components/sections/cloud-secure";
-import AIApplications from "@/components/sections/ai-applications";
-import ServicesGrid from "@/components/sections/services-grid";
-import WhyMission from "@/components/sections/why-mission";
-import Testimonials from "@/components/sections/testimonials";
 import Footer from "@/components/ui/footer";
+import AboutContent from "../../components/about-us/about-content";
+import AboutHero from "../../components/about-us/about-hero";
+import TeamSection from "../../components/about-us/team-section";
+import ContactCTA from "../../components/about-us/contact-cta";
+
 
 export default function AboutUsPage() {
   return (
     <>
       <Navbar />
+      <main className="min-h-screen flex flex-col">
+        <AboutHero />
+        <AboutContent />
+        <TeamSection />
+        <ContactCTA />
+      </main>
       <Footer />
     </>
   );
