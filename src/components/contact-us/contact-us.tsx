@@ -16,7 +16,7 @@ export default function ContactUs() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="py-32 relative"
+        className="relative py-20 sm:py-32"
         style={{
           gridTemplateColumns: "2fr 1fr",
           backgroundImage: `url(${cloudbg.src})`,
@@ -51,7 +51,7 @@ export default function ContactUs() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="bg-white text-slate-800 text-center"
         >
-          <div className="text-slate-800 font-extrabold text-2xl bg-gradient-to-r from-yellow-400 to-yellow-500 py-4 mb-8 px-2 italic rounded-lg shadow-md">
+          <div className="text-white text-slate-800 font-extrabold text-2xl bg-gradient-to-r from-blue-400 to-blue-700 py-4 mb-8 px-2 rounded-lg shadow-md">
             Let us guide you! Share your needs, and we&apos;ll connect you to the right experts.
           </div>
         </motion.div>
