@@ -33,7 +33,7 @@ export default function ContactCTA() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <Link
-              href="#"
+              href="../contact-us"
               className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 md:text-lg"
             >
               Get in touch

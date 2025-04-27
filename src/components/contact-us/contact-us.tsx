@@ -1,8 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import Head from "next/head";
-import Script from "next/script";
 import cloudbg from "@/assets/images/cloud_background.jpeg";
 
 export default function ContactUs() {
@@ -13,7 +12,10 @@ export default function ContactUs() {
       </Head>
 
       {/* Hero Section */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
         className="py-32 relative"
         style={{
           gridTemplateColumns: "2fr 1fr",
@@ -22,25 +24,45 @@ export default function ContactUs() {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 from-slate-900 to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 to-transparent opacity-80" />
         <div className="relative z-10 text-4xl lg:text-4xl pt-6">
-          <div className="py-4 text-center text-white font-sans font-extrabold">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="py-4 text-center text-white font-sans font-extrabold"
+          >
             <p className="px-3">CONTACT US</p>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Main Content */}
-      <div className="bg-white py-10 mx-8 sm:px-16 lg:px-36 2xl:px-52">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="bg-white py-10 mx-8 sm:px-16 lg:px-36 2xl:px-52"
+      >
         {/* Decorative Section Title */}
-        <div className="bg-white text-slate-800 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="bg-white text-slate-800 text-center"
+        >
           <div className="text-slate-800 font-extrabold text-2xl bg-gradient-to-r from-yellow-400 to-yellow-500 py-4 mb-8 px-2 italic rounded-lg shadow-md">
             Let us guide you! Share your needs, and we&apos;ll connect you to the right experts.
           </div>
-        </div>
+        </motion.div>
 
         {/* Booking Section */}
-        <div className="py-10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="py-10"
+        >
           <main className="flex flex-col min-h-full items-center justify-center bg-white">
             <div className="w-full max-w-4xl shadow-lg rounded-lg overflow-hidden">
               <iframe
@@ -53,8 +75,8 @@ export default function ContactUs() {
               ></iframe>
             </div>
           </main>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
