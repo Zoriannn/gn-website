@@ -4,42 +4,43 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
+import gnpic3 from "@/assets/images/gn-fam3.jpeg";
 
 const teamMembers = [
   {
     name: "Li Sheng Chong",
     title: "CEO",
-    image: "/images/todd.jpg",
+    image: gnpic3,
     linkedin: "#",
   },
   {
     name: "David Oi",
     title: "CTO",
-    image: "/images/ben.jpg",
+    image: gnpic3,
     linkedin: "#",
   },
   {
     name: "Yi Wooi Chong",
     title: "Product Director",
-    image: "/images/mike_b.jpg",
+    image: gnpic3,
     linkedin: "#",
   },
   {
     name: "Yssane Chai",
     title: "Senior Engineer",
-    image: "/images/daniel.jpg",
+    image: gnpic3,
     linkedin: "#",
   },
   {
     name: "Jason Lim",
     title: "Head of Operations",
-    image: "/images/renee.jpg",
+    image: gnpic3,
     linkedin: "#",
   },
   {
     name: "Hakim Hairon",
     title: "Design Lead",
-    image: "/images/step.jpg",
+    image: gnpic3,
     linkedin: "#",
   },
 ];

@@ -6,14 +6,14 @@ import gnpic from "@/assets/images/gn-fam.jpeg";
 
 export default function AboutHero() {
   return (
-    <section className="relative pt-24 pb-16 lg:pb-24 overflow-hidden">
+    <section className="relative pt-10 pb-8 lg:pb-24 overflow-hidden">
       {/* Background element */}
       <div
         className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-600 to-blue-800"
         aria-hidden="true"
       />
 
-      <div className="container-custom pt-16 pb-20">
+      <div className="container-custom pt-2 pb-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left text-white">
             <motion.h1

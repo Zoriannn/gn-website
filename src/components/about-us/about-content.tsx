@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import gnpic2 from "@/assets/images/gn-fam2.jpeg";
 
 export default function AboutContent() {
   const ref1 = useRef(null);
@@ -13,15 +14,20 @@ export default function AboutContent() {
 
   return (
     <div className="bg-white">
-      <section className="py-16 lg:py-24">
+      <section className="py-16 lg:py-8">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="max-w-3xl mx-auto text-center mb-16"
+            >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
             <p className="text-lg text-gray-700">
             Galactic Network is a trusted business technology transformation partner dedicated to enabling organizations to thrive in the digital world. With over 40 years of combined cloud expertise, our team designs, builds, and manages secure, scalable, and high-performing cloud native environments that power innovation and resilience.
 Founded with a vision to simplify complex technology challenges, we specialize in helping businesses evolve into technology-native enterprises. Whether it’s migrating legacy systems, modernizing architecture, or ensuring cost efficiency and security, we bring a business-first approach to everything we do.
             </p>
-          </div>
+          </motion.div>
 
           <div
             ref={ref1}
@@ -34,7 +40,7 @@ Founded with a vision to simplify complex technology challenges, we specialize i
               className="relative h-96 lg:h-auto lg:aspect-[4/3] overflow-hidden rounded-xl shadow-lg"
             >
               <Image
-                src="/images/Dualboot-1.jpg"
+                src={gnpic2}
                 alt="Galactic Network Office"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

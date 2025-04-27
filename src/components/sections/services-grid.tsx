@@ -2,54 +2,76 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import cloud1 from "../../assets/images/cloud_1.png";
+import cloud2 from "../../assets/images/cloud_2.png";
+import cloud3 from "../../assets/images/cloud_3.png";
+import cloud4 from "../../assets/images/cloud_4.png";
+import cloud5 from "../../assets/images/cloud_5.png";
+import cloud6 from "../../assets/images/cloud_6.png";
+import cloud7 from "../../assets/images/cloud_7.png";
 
 const ServicesGrid = () => {
   const services = [
     {
       title: "Cloud Landing Zone",
-      icon: "https://ext.same-assets.com/3396239064/2286122983.svg+xml",
+      icon: cloud1,
       href: "#",
     },
     {
       title: "Cloud Migration",
-      icon: "https://ext.same-assets.com/3396239064/2286122983.svg+xml",
+      icon: cloud2,
       href: "#",
     },
     {
       title: "Cloud Security & Compliance",
-      icon: "https://ext.same-assets.com/3396239064/2286122983.svg+xml",
+      icon: cloud7,
       href: "#",
     },
     {
       title: "Cost & Architecture Optimization",
-      icon: "https://ext.same-assets.com/825999966/3973646205.svg+xml",
+      icon: cloud6,
       href: "#",
     },
     {
       title: "Cloud Platform Accelerator & Containerization",
-      icon: "https://ext.same-assets.com/2600985523/1747417680.svg+xml",
+      icon: cloud5,
       href: "#",
     },
     {
       title: "Managed Cloud Operations",
-      icon: "https://ext.same-assets.com/2572778066/3403518403.svg+xml",
+      icon: cloud4,
       href: "#",
     },
     {
       title: "Cloud Backup Solutions",
-      icon: "https://ext.same-assets.com/825999966/3973646205.svg+xml",
+      icon: cloud3,
       href: "#",
     },
   ];
 
-  return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-center text-mission-navy mb-12">
-          What do you need help with?
-        </h2>
+  const ref = useRef(null);
+  const isInView1 = useInView(ref, { once: true, margin: "-100px" });
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+  return (
+    <section ref={ref} className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, x: -30 }}
+          animate={isInView1 ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+          transition={{ duration: 1.5 }}
+          className="text-2xl font-bold text-center text-mission-navy mb-12"
+        >
+          What do you need help with?
+        </motion.h2>
+
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={isInView1 ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+          transition={{ duration: 1.5}}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        > 
           {services.map((service, index) => (
             <Link
               key={index}
@@ -74,7 +96,7 @@ const ServicesGrid = () => {
               </h3>
             </Link>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
